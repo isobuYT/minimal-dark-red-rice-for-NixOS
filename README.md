@@ -55,9 +55,6 @@ later
 
 ---
 
-
----
-
 ## 🚀 Installation
 
 ### 1. Clone the repo
