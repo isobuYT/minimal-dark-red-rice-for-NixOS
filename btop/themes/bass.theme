@@ -1,0 +1,51 @@
+set $bg #0a0a0f set $bg2 #111118 set $border #1a1a24 set $accent #2a2a35 set $red #cc1a2a set $text #8a8a9a set $dim #333340
+
+# Btop theme based on your Sway colors
+theme[main_bg]="#0a0a0f"        # $bg
+theme[main_fg]="#8a8a9a"        # $text
+theme[title]="#2a2a35"          # $accent
+theme[hi_fg]="#2a2a35"          # $accent
+theme[selected_bg]="#111118"    # $bg2
+theme[selected_fg]="#2a2a35"    # $accent
+theme[inactive_fg]="#333340"    # $dim
+theme[graph_text]="#8a8a9a"     # $text
+theme[meter_bg]="#111118"       # $bg2
+theme[proc_misc]="#2a2a35"      # $accent
+
+theme[cpu_box]="#2a2a35"        # $accent
+theme[mem_box]="#2a2a35"        # $accent
+theme[net_box]="#2a2a35"        # $accent
+theme[proc_box]="#2a2a35"       # $accent
+theme[div_line]="#1a1a24"       # $border
+
+theme[temp_start]="#2a2a35"     # $accent
+theme[temp_mid]="#8a8a9a"       # $text
+theme[temp_end]="#cc1a2a"       # $red
+
+theme[cpu_start]="#111118"      # $bg2
+theme[cpu_mid]="#2a2a35"        # $accent
+theme[cpu_end]="#8a8a9a"        # $text
+
+theme[free_start]="#111118"     # $bg2
+theme[free_mid]="#2a2a35"       # $accent
+theme[free_end]="#8a8a9a"       # $text
+
+theme[cached_start]="#111118"   # $bg2
+theme[cached_mid]="#2a2a35"     # $accent
+theme[cached_end]="#8a8a9a"     # $text
+
+theme[available_start]="#111118" # $bg2
+theme[available_mid]="#2a2a35"   # $accent
+theme[available_end]="#8a8a9a"   # $text
+
+theme[used_start]="#111118"      # $bg2
+theme[used_mid]="#2a2a35"        # $accent
+theme[used_end]="#8a8a9a"        # $text
+
+theme[download_start]="#111118"  # $bg2
+theme[download_mid]="#2a2a35"    # $accent
+theme[download_end]="#8a8a9a"    # $text
+
+theme[upload_start]="#111118"    # $bg2
+theme[upload_mid]="#2a2a35"      # $accent
+theme[upload_end]="#8a8a9a"      # $text

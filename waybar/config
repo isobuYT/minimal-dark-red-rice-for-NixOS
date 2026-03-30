@@ -1,0 +1,91 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 0,
+  "spacing": 0,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 5,
+  "margin-right": 10,
+
+  "modules-left":   ["sway/workspaces"],
+  "modules-center": ["mpris"],
+  "modules-right":  [
+    "sway/language",
+    "cpu",
+    "pulseaudio",
+    "tray",
+    "clock"
+  ],
+
+  // ── workspaces ─────────────────────────────────
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+
+  // ── language ───────────────────────────────────
+  "sway/language": {
+    "format":   "⌨ {}",
+    "tooltip":  false,
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+  },
+
+  // ── media ──────────────────────────────────────
+  "mpris": {
+    "format":        "{player_icon} {title} — {artist}",
+    "format-paused": " {title} — {artist}",
+    "max-length":    40,
+    "tooltip":       false,
+    "player-icons": {
+      "default": "▶",
+      "spotify": "",
+      "firefox": "󰈹",
+      "mpv":     ""
+    },
+    "status-icons": {
+      "paused": ""
+    }
+  },
+
+  // ── cpu ────────────────────────────────────────
+  "cpu": {
+    "format":   "󰘚 {usage}%",
+    "interval": 2,
+    "tooltip":  false,
+    "on-click": "kitty btop"
+  },
+
+  // ── audio ──────────────────────────────────────
+  "pulseaudio": {
+    "format":           "{icon} {volume}%",
+    "format-muted":     "󰝟 muted",
+    "format-bluetooth": "󰂯 {volume}%",
+    "format-icons": {
+      "default":          ["󰕿", "󰖀", "󰕾"],
+      "headphone":        "󰋋",
+      "headset":          "󰋎",
+      "hands-free":       "󰋎",
+      "portable":         "󰄝"
+    },
+    "scroll-step":  5,
+    "max-volume":   150,
+    "on-click":     "pavucontrol",
+    "tooltip":      false
+  },
+
+  // ── tray ───────────────────────────────────────
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+
+  // ── clock ──────────────────────────────────────
+  "clock": {
+    "format":          "󰅐 {:%H:%M}",
+    "format-alt":      "󰃭 {:%a %d.%m.%Y}",
+    "tooltip":         false,
+    "on-click-middle": "kitty calcurse"
+  }
+}
