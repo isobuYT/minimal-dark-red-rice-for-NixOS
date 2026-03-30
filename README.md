@@ -1,5 +1,4 @@
 # minimal-dark-red-rice-for-NixOS
-=======
 # 🔴 dark rice — NixOS + Sway
 
 > minimal dark red rice for NixOS · Sway WM · foot terminal · custom colorscheme
@@ -15,6 +14,7 @@
 
 ## 📸 Screenshots
 
+later
 
 ---
 
@@ -167,23 +167,6 @@ sway
 | `Super + Shift + C`      | Reload Sway config        |
 | `Print`                  | Screenshot (grimshot)     |
 
----
-
-## ✏️ Neovim
-
-Managed with **lazy.nvim**. Plugins:
-
-| Plugin | Purpose |
-|--------|---------|
-| `nvim-tree/nvim-tree.lua` | File tree sidebar |
-| `nvim-lualine/lualine.nvim` | Statusline (custom red lualine theme) |
-| `RRethy/base16-nvim` | Base16 colorscheme via `dankcolors.lua` |
-
-The colorscheme lives in `nvim/lua/plugins/dankcolors.lua` and has a **live-reload watcher** built in — saving the file re-applies colors instantly without restarting Neovim.
-
-```
-Ctrl + N   → toggle file tree
-```
 
 ---
 
