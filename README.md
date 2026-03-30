@@ -14,7 +14,9 @@
 
 ## 📸 Screenshots
 
-later
+<p align="center">
+  <img src="screenshots/001.png" width="100%" />
+</p>
 
 ---
 
