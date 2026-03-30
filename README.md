@@ -241,6 +241,7 @@ dotfiles/
 │       └── plugins/
 │           └── dankcolors.lua
 ├── screenshots/
+│   └── 001.png
 └── wallpapers/
     └── 001.jpg
 
