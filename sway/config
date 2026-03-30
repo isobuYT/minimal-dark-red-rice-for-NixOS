@@ -85,7 +85,6 @@ output * bg /home/isobu/wallpapers/001.jpg fill
     bindsym F1 exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
-    bindsym Print exec grim
 
 # Colors from wallpaper
 set $bg        #0a0a0f
