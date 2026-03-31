@@ -11,13 +11,6 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.extraEntries = ''
-  menuentry "Arch Linux" {
-    search --set=root --fs-uuid 6f15a0ca-042a-43d9-8f10-0a20da588511
-    linux /boot/vmlinuz-linux root=UUID=6f15a0ca-042a-43d9-8f10-0a20da588511 rw
-    initrd /boot/initramfs-linux.img
-  }
-'';
 
   networking.hostName = "nixos-btw";  #hostname
   networking.networkmanager.enable = true;
