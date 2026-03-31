@@ -4,41 +4,53 @@
   imports =
     [
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
- #grub
-  boot.loader.grub.enable = true; 
+
+  #name replace on your name
+  home-manager.users.name = import /home/isobu/.config/home-manager/home.nix; 
+  users.users.name = { 
+   isNormalUser = true;
+   extraGroups = [ "wheel" "networkmanager" ];
+      packages = with pkgs; [
+        tree
+      ];
+    };
+
+  boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
   boot.loader.grub.efiSupport = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.extraEntries = ''
-  menuentry "Arch Linux" {
-    search --set=root --fs-uuid 6f15a0ca-042a-43d9-8f10-0a20da588511
-    linux /boot/vmlinuz-linux root=UUID=6f15a0ca-042a-43d9-8f10-0a20da588511 rw
-    initrd /boot/initramfs-linux.img
-  }
-'';
 
-  networking.hostName = "nixos-btw";  #hostname
+  #nixos replace on your hostname
+  networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
+  #steam
   programs.steam = {
   enable = true;
   remotePlay.openFirewall = true;
   dedicatedServer.openFirewall = true;
  };
- #sway
- programs.sway = {
+  #sway
+  programs.sway = {
   enable = true;
   package = pkgs.swayfx;
  };
+  #appimage
+  programs.appimage = {
+  enable = true;
+  binfmt = true;
+};
+
   nixpkgs.config.allowUnfree = true;
 
-  time.timeZone = "Europe/Kyiv";  #timezone
+  #Europe/Kyiv replace on your timezone
+  time.timeZone = "Europe/Kyiv";
 
-   services.flatpak.enable = true;
-   services.xserver.videoDrivers = [ "nvidia" ];
- 
- #nvidia
+  services.flatpak.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+
  hardware.nvidia = {
    modesetting.enable = true;
    powerManagement.enable = true;
@@ -56,27 +68,26 @@
    nvidiaBusId = "PCI:1:0:0";
 };
  
- #pipewire
-    services.pipewire = {
-      enable = true;
-      pulse.enable = true;
-    };
+ services.pipewire = {
+  enable = true;
+  pulse.enable = true;
+  alsa.enable = true;
+  alsa.support32Bit = true;
+  extraConfig.pipewire."92-low-latency" = {
+    context.properties = {
+      default.clock.rate = 48000;
+      default.clock.quantum = 512;
+      default.clock.min-quantum = 512;
+      default.clock.max-quantum = 512;
+     };
+   };
+ };     
 
- #user
-      users.users.nicname = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
-      packages = with pkgs; [
-        tree
-      ];
-    };
-
- #packages
     environment.systemPackages = with pkgs; [
       neovim
+      yt-dlp
       firefox
       nemo
-      spotify
       fastfetch
       btop
       pavucontrol
@@ -87,10 +98,10 @@
       grim
       git
     ];
-    
- #font
-fonts.packages = with pkgs; [
-  nerd-fonts.jetbrains-mono
+   
+   security.rtkit.enable = true;
+   fonts.packages = with pkgs; [
+   nerd-fonts.jetbrains-mono
 ];
   system.stateVersion = "25.11"; 
 
