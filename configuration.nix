@@ -7,15 +7,18 @@
       <home-manager/nixos>
     ];
 
-  #name replace on your name
+  #name replace with your name
   home-manager.users.name = import /home/isobu/.config/home-manager/home.nix; 
   users.users.name = { 
    isNormalUser = true;
    extraGroups = [ "wheel" "networkmanager" ];
       packages = with pkgs; [
         tree
-      ];
-    };
+    ];
+ };
+
+  #Europe/Kyiv replace with your timezone
+  time.timeZone = "Europe/Kyiv";
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "nodev";
@@ -23,7 +26,7 @@
   boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #nixos replace on your hostname
+  #nixos replace with your hostname
   networking.hostName = "nixos"; 
   networking.networkmanager.enable = true;
   #steam
@@ -44,9 +47,6 @@
 };
 
   nixpkgs.config.allowUnfree = true;
-
-  #Europe/Kyiv replace on your timezone
-  time.timeZone = "Europe/Kyiv";
 
   services.flatpak.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
