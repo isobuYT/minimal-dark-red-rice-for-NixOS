@@ -78,9 +78,15 @@ mkdir -p ~/.config/btop/themes
 mkdir -p ~/.config/mako
 mkdir -p ~/.config/cava
 mkdir -p ~/.config/nvim/lua/plugins
+mkdir -p /etc/nixos
 ```
 
 ### 3. Copy configs
+
+```bash
+### configuration ### need sudo ###
+sudo cp ~/dotfiles/configuration.nix        /etc/nixos/configuration.nix
+```
 
 ```bash
 # window manager & bar
