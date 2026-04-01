@@ -33,7 +33,6 @@
 | Editor        | Neovim (lazy.nvim)          |
 | Font          | JetBrainsMono Nerd Font     |
 | Monitor       | Btop (dark-r theme)         |
-| Notifications | Mako                        |
 | Wallpaper     | Swaybg                      |
 | Screenshots   | Grim                        |
 | Media         | Playerctl / MPRIS           |
@@ -71,6 +70,7 @@ cd ~/dotfiles
 ### 2. Create config directories
 
 ```bash
+sudo mkdir -p /etc/nixos/modules
 mkdir -p ~/.config/sway
 mkdir -p ~/.config/waybar
 mkdir -p ~/.config/foot
@@ -80,41 +80,39 @@ mkdir -p ~/.config/btop/themes
 mkdir -p ~/.config/mako
 mkdir -p ~/.config/cava
 mkdir -p ~/.config/nvim/lua/plugins
-mkdir -p /etc/nixos
 ```
 
 ### 3. Copy configs
 
 ```bash
 ### configuration ### need sudo ###
-sudo cp ~/dotfiles/configuration.nix        /etc/nixos/configuration.nix
+sudo cp ~/dotfiles/configuration.nix           /etc/nixos/configuration.nix
 ```
 
 ```bash
+sudo cp ~/dotfiles/modules/audio.nix           /etc/nixos/modules/audio.nix
+sudo cp ~/dotfiles/modules/boot.nix            /etc/nixos/modules/boot.nix  
+sudo cp ~/dotfiles/modules/fonts.nix           /etc/nixos/modules/fonts.nix  
+sudo cp ~/dotfiles/modules/nvidia.nix          /etc/nixos/modules/nvidia.nix
+sudo cp ~/dotfiles/modules/packages.nix        /etc/nixos/modules/packages.nix
+sudo cp ~/dotfiles/modules/programs.nix        /etc/nixos/modules/programs.nix
+sudo cp ~/dotfiles/modules/users.nix           /etc/nixos/modules/users.nix
+```
+```bash
 # window manager & bar
-cp ~/dotfiles/sway/config              ~/.config/sway/config
-cp ~/dotfiles/waybar/config            ~/.config/waybar/config
-cp ~/dotfiles/waybar/style.css         ~/.config/waybar/style.css
-
-# terminal
-cp ~/dotfiles/foot/foot.ini            ~/.config/foot/foot.ini
-
-# launcher
-cp ~/dotfiles/wofi/config              ~/.config/wofi/config
-cp ~/dotfiles/wofi/style.css           ~/.config/wofi/style.css
-
-# fetch — custom logo
-cp ~/dotfiles/fastfetch/config.jsonc   ~/.config/fastfetch/config.jsonc
-cp ~/dotfiles/fastfetch/logo.txt       ~/.config/fastfetch/logo.txt
-
-# monitor — bass theme
-cp ~/dotfiles/btop/btop.conf           ~/.config/btop/btop.conf
-cp ~/dotfiles/btop/themes/dark-r.theme   ~/.config/btop/themes/dark-r.theme
-
-# editor
-cp ~/dotfiles/nvim/init.lua                        ~/.config/nvim/init.lua
-cp ~/dotfiles/nvim/lazy-lock.json                  ~/.config/nvim/lazy-lock.json
-cp ~/dotfiles/nvim/lua/plugins/dankcolors.lua      ~/.config/nvim/lua/plugins/dankcolors.lua
+cp ~/dotfiles/.config/sway/config              ~/.config/sway/config
+cp ~/dotfiles/.config/waybar/config            ~/.config/waybar/config
+cp ~/dotfiles/.config/waybar/style.css         ~/.config/waybar/style.css
+cp ~/dotfiles/.config/foot/foot.ini            ~/.config/foot/foot.ini
+cp ~/dotfiles/.config/wofi/config              ~/.config/wofi/config
+cp ~/dotfiles/.config/wofi/style.css           ~/.config/wofi/style.css
+cp ~/dotfiles/.config/fastfetch/config.jsonc   ~/.config/fastfetch/config.jsonc
+cp ~/dotfiles/.config/fastfetch/logo.txt       ~/.config/fastfetch/logo.txt
+cp ~/dotfiles/.config/btop/btop.conf           ~/.config/btop/btop.conf
+cp ~/dotfiles/.config/btop/themes/dark-r.theme   ~/.config/btop/themes/dark-r.theme
+cp ~/dotfiles/.config/nvim/init.lua                        ~/.config/nvim/init.lua
+cp ~/dotfiles/.config/nvim/lazy-lock.json                  ~/.config/nvim/lazy-lock.json
+cp ~/dotfiles/.config/nvim/lua/plugins/dankcolors.lua      ~/.config/nvim/lua/plugins/dankcolors.lua
 ```
 
 ### 4. Set the wallpaper
@@ -189,12 +187,6 @@ sway
 | `div_line` | `#1a1a24` | box borders |
 | `selected_bg` | `#111118` | selection surface |
 
-After copying the theme file, activate it inside btop:
-
-```
-btop → ESC → Options → Color theme → dark-r
-```
-
 ---
 
 ## ✨ Fastfetch — custom logo
@@ -225,29 +217,41 @@ Modules shown: `os · host · kernel · uptime · packages · shell · display �
 
 ```
 dotfiles/
-├── sway/
-│   └── config
-├── waybar/
-│   ├── config
-│   └── style.css
-├── foot/
-│   └── foot.ini
-├── wofi/
-│   ├── config
-│   └── style.css
-├── fastfetch/
-│   ├── config.jsonc
-│   └── logo.txt
-├── btop/
-│   ├── btop.conf
-│   └── themes/
-│       └── dark-r.theme
-├── nvim/
-│   ├── init.lua
-│   ├── lazy-lock.json
-│   └── lua/
-│       └── plugins/
-│           └── dankcolors.lua
+├── modules/
+│   ├── audio.nix
+│   ├── boot.nix
+│   ├── fonts.nix
+│   ├── nvidia.nix
+│   ├── packages.nix
+│   ├── programs.nix
+│   └── users.nix
+│ 
+├── .config/
+│   ├── btop/
+│   │    ├── themes/
+│   │    │   └── dark-r.theme
+│   │    └── btop.conf  
+│   ├── fastfetch/
+│   │   ├── config.jsonc
+│   │   └── logo.txt
+│   ├── foot/
+│   │   └── foot.ini
+│   ├── nvim/
+│   │   ├── init.lua
+│   │   ├── lazy-lock.json
+│   │   └── lua/
+│   │       └── plugins/
+│   │           └── dankcolors.lua
+│   ├── sway/
+│   │   └── config
+│   ├── waybar/
+│   │   ├── config
+│   │   └── style.css
+│   ├── wofi/
+│   │   ├── config
+│   │   └── style.css
+│   └── .bashrc
+│ 
 ├── screenshots/
 │   └── 001.png
 └── wallpapers/
