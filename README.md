@@ -243,7 +243,7 @@ dotfiles/
 ├── screenshots/
 │   └── 001.png
 └── wallpapers/
-    └── 001.jpg
-
+    ├── 001.jpg
+    └── 002.jpg
 ```
 made with love on nixos!
