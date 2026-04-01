@@ -8,7 +8,8 @@
     ];
 
   #name replace with your name
-  home-manager.users.name = import /home/isobu/.config/home-manager/home.nix; 
+  home-manager.users.name = import /home/name/.config/home-manager/home.nix; 
+  #name replace with your name
   users.users.name = { 
    isNormalUser = true;
    extraGroups = [ "wheel" "networkmanager" ];
@@ -101,9 +102,9 @@
    
    security.rtkit.enable = true;
    fonts.packages = with pkgs; [
-   nerd-fonts.jetbrains-mono
+   maple-mono.NF
 ];
-  system.stateVersion = "25.11"; 
+ system.stateVersion = "25.11"; 
 
 }
 
