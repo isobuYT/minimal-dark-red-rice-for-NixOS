@@ -59,7 +59,9 @@
 
 ## 🚀 Installation
 
-** IMPORTANT: Please be warned that it may not work perfectly out of the box. For best security, read over all the files to confirm there are no conflictions with your current system.### 1. Clone the repo
+** IMPORTANT: Please be warned that it may not work perfectly out of the box. For best security, read over all the files to confirm there are no conflictions with your current system.
+
+### 1. Clone the repo
 
 ```bash
 git clone https://github.com/isobuYT/minimal-dark-red-rice-for-NixOS ~/dotfiles
