@@ -12,6 +12,7 @@
   "modules-center": ["mpris"],
   "modules-right":  [
     "sway/language",
+    "network",
     "cpu",
     "pulseaudio",
     "tray",
@@ -42,11 +43,24 @@
       "default": "▶",
       "spotify": "",
       "firefox": "󰈹",
-      "mpv":     ""
+      "mpv":     "",
+      "spotube": "󱍚 "
     },
     "status-icons": {
       "paused": ""
     }
+  },
+
+  // ── network ────────────────────────────────────
+  "network": {
+    "interface":           "wlp0s20f3",
+    "format-wifi":         "  {bandwidthDownBits}",
+    "format-ethernet":     "  {bandwidthDownBits}",
+    "format-disconnected": "󰤮  offline",
+    "format-linked":       "󰤫  no ip",
+    "interval":            5,
+    "tooltip":             false,
+    "on-click":            "foot nmtui"
   },
 
   // ── cpu ────────────────────────────────────────
@@ -54,7 +68,7 @@
     "format":   "󰘚 {usage}%",
     "interval": 2,
     "tooltip":  false,
-    "on-click": "kitty btop"
+    "on-click": "foot btop"
   },
 
   // ── audio ──────────────────────────────────────
