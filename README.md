@@ -85,31 +85,29 @@ mkdir -p ~/.config/nvim/lua/plugins
 ### 3. Copy configs
 
 ```bash
-### configuration ### need sudo ###
-sudo cp ~/dotfiles/configuration.nix           /etc/nixos/configuration.nix
+sudo cp ~/dotfiles/etc/nixos/configuration.nix             /etc/nixos/configuration.nix
 ```
 
 ```bash
-sudo cp ~/dotfiles/modules/audio.nix           /etc/nixos/modules/audio.nix
-sudo cp ~/dotfiles/modules/boot.nix            /etc/nixos/modules/boot.nix  
-sudo cp ~/dotfiles/modules/fonts.nix           /etc/nixos/modules/fonts.nix  
-sudo cp ~/dotfiles/modules/nvidia.nix          /etc/nixos/modules/nvidia.nix
-sudo cp ~/dotfiles/modules/packages.nix        /etc/nixos/modules/packages.nix
-sudo cp ~/dotfiles/modules/programs.nix        /etc/nixos/modules/programs.nix
-sudo cp ~/dotfiles/modules/users.nix           /etc/nixos/modules/users.nix
+sudo cp ~/dotfiles/etc/nixos/modules/audio.nix             /etc/nixos/modules/audio.nix
+sudo cp ~/dotfiles/etc/nixos/modules/boot.nix              /etc/nixos/modules/boot.nix  
+sudo cp ~/dotfiles/etc/nixos/modules/fonts.nix             /etc/nixos/modules/fonts.nix  
+sudo cp ~/dotfiles/etc/nixos/modules/nvidia.nix            /etc/nixos/modules/nvidia.nix
+sudo cp ~/dotfiles/etc/nixos/modules/packages.nix          /etc/nixos/modules/packages.nix
+sudo cp ~/dotfiles/etc/nixos/modules/programs.nix          /etc/nixos/modules/programs.nix
+sudo cp ~/dotfiles/etc/nixos/modules/users.nix             /etc/nixos/modules/users.nix
 ```
 ```bash
-# window manager & bar
-cp ~/dotfiles/.config/sway/config              ~/.config/sway/config
-cp ~/dotfiles/.config/waybar/config            ~/.config/waybar/config
-cp ~/dotfiles/.config/waybar/style.css         ~/.config/waybar/style.css
-cp ~/dotfiles/.config/foot/foot.ini            ~/.config/foot/foot.ini
-cp ~/dotfiles/.config/wofi/config              ~/.config/wofi/config
-cp ~/dotfiles/.config/wofi/style.css           ~/.config/wofi/style.css
-cp ~/dotfiles/.config/fastfetch/config.jsonc   ~/.config/fastfetch/config.jsonc
-cp ~/dotfiles/.config/fastfetch/logo.txt       ~/.config/fastfetch/logo.txt
-cp ~/dotfiles/.config/btop/btop.conf           ~/.config/btop/btop.conf
-cp ~/dotfiles/.config/btop/themes/dark-r.theme   ~/.config/btop/themes/dark-r.theme
+cp ~/dotfiles/.config/sway/config                          ~/.config/sway/config
+cp ~/dotfiles/.config/waybar/config                        ~/.config/waybar/config
+cp ~/dotfiles/.config/waybar/style.css                     ~/.config/waybar/style.css
+cp ~/dotfiles/.config/foot/foot.ini                        ~/.config/foot/foot.ini
+cp ~/dotfiles/.config/wofi/config                          ~/.config/wofi/config
+cp ~/dotfiles/.config/wofi/style.css                       ~/.config/wofi/style.css
+cp ~/dotfiles/.config/fastfetch/config.jsonc               ~/.config/fastfetch/config.jsonc
+cp ~/dotfiles/.config/fastfetch/logo.txt                   ~/.config/fastfetch/logo.txt
+cp ~/dotfiles/.config/btop/btop.conf                       ~/.config/btop/btop.conf
+cp ~/dotfiles/.config/btop/themes/dark-r.theme             ~/.config/btop/themes/dark-r.theme
 cp ~/dotfiles/.config/nvim/init.lua                        ~/.config/nvim/init.lua
 cp ~/dotfiles/.config/nvim/lazy-lock.json                  ~/.config/nvim/lazy-lock.json
 cp ~/dotfiles/.config/nvim/lua/plugins/dankcolors.lua      ~/.config/nvim/lua/plugins/dankcolors.lua
@@ -170,7 +168,7 @@ sway
 | `Super + Shift + Space`  | Toggle floating           |
 | `Super + Shift + E`      | Exit Sway                 |
 | `Super + Shift + C`      | Reload Sway config        |
-| `Print`                  | Screenshot (grimshot)     |
+| `Print`                  | Screenshot (grim)         |
 
 
 ---
@@ -217,14 +215,16 @@ Modules shown: `os · host · kernel · uptime · packages · shell · display �
 
 ```
 dotfiles/
-├── modules/
-│   ├── audio.nix
-│   ├── boot.nix
-│   ├── fonts.nix
-│   ├── nvidia.nix
-│   ├── packages.nix
-│   ├── programs.nix
-│   └── users.nix
+├── etc
+│   └── nixos
+│       └── modules/
+│           ├── audio.nix
+│           ├── boot.nix
+│           ├── fonts.nix
+│           ├── nvidia.nix
+│           ├── packages.nix
+│           ├── programs.nix
+│           └── users.nix
 │ 
 ├── .config/
 │   ├── btop/
